@@ -1,0 +1,9 @@
+Script started on 2022-02-04 18:12:10+02:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="120" LINES="30"]
+]0;root@DESKTOP-2GOOP6D: /home/bronttoroot@DESKTOP-2GOOP6D:/home/brontto# docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+]0;root@DESKTOP-2GOOP6D: /home/bronttoroot@DESKTOP-2GOOP6D:/home/brontto# docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+]0;root@DESKTOP-2GOOP6D: /home/bronttoroot@DESKTOP-2GOOP6D:/home/brontto# exit
+exit
+
+Script done on 2022-02-04 18:12:20+02:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,15 @@
+command in order:
+
+command to start 
+>docker run -d -it --name missing ubuntu sh -c 'echo "Input website:"; read -p "" website; echo "Searching.."; sleep 1; curl http://$website;'
+
+to log in
+>docker exec -it mssing bahs
+
+to install curl
+>apt-get update
+>apt install curl
+
+in another terminal
+>docker attach missing
+helsinki.fi

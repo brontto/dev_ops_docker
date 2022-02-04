@@ -1,0 +1,10 @@
+Script started on 2022-02-04 18:05:48+02:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="120" LINES="30"]
+]0;root@DESKTOP-2GOOP6D: /home/bronttoroot@DESKTOP-2GOOP6D:/home/brontto# docker ps-[K -a
+CONTAINER ID   IMAGE                    COMMAND                  CREATED         STATUS                     PORTS                NAMES
+2457148b5926   docker/getting-started   "/docker-entrypoint.…"   5 minutes ago   Up 5 minutes               0.0.0.0:80->80/tcp   awesome_tharp
+204c4eb0a9b7   mysql                    "docker-entrypoint.s…"   6 minutes ago   Exited (1) 6 minutes ago                        dreamy_darwin
+e0c416513475   nicolaka/netshoot        "zsh"                    9 minutes ago   Exited (0) 9 minutes ago                        epic_grothendieck
+]0;root@DESKTOP-2GOOP6D: /home/bronttoroot@DESKTOP-2GOOP6D:/home/brontto# exit
+exit
+
+Script done on 2022-02-04 18:12:20+02:00 [COMMAND_EXIT_CODE="0"]
