@@ -1,0 +1,12 @@
+
+REPOSITORY                          TAG       IMAGE ID       CREATED         SIZE
+ubuntu                              latest    54c9d81cbb44   3 days ago      72.8MB
+fav_distro                          bionic    dcf4d4bef137   3 days ago      63.2MB
+ubuntu                              18.04     dcf4d4bef137   3 days ago      63.2MB
+ubuntu                              bionic    dcf4d4bef137   3 days ago      63.2MB
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   10 months ago   83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   10 months ago   15.7MB
+
+alpine version size is 15.7MB and ubuntu version size is 83MB
+
+secret message was same. 
