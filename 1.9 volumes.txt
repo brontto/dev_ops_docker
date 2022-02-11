@@ -1,0 +1,4 @@
+mkdir usr/src/app
+touch usr/src/app/text.log
+
+docker run -d -v /usr/src/app/text.log:/usr/src/app/txt.log devopsdockeruh/simple-web-service
