@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  frontend:
+      image: frontend
+      build: ./example-frontend
+      expose:
+        - 5000
+      ports: 
+        - 5000:5000
+      command: ["serve", "-s", "-l", "5000", "build"]
+
+  backend:
+      image: backend
+      environment: 
+        - REQUEST_ORIGIN=http://localhost:5000
+      build: ./example-backend
+      expose:
+        - 8080
+      ports: 
+        - 8080:8080
+     
