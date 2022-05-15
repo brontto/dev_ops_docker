@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  frontend:
+      image: frontend
+      build: ./example-frontend
+      expose:
+        - 5000
+      ports: 
+        - 5000:5000
+      command: ["serve", "-s", "-l", "5000", "build"]
+
+  backend:
+      image: backend
+      environment: 
+        - REQUEST_ORIGIN=http://localhost:5000
+        - REDIS_HOST=redis
+        - POSTGRES_HOST=db
+        - POSTGRES_USER=bron
+        - POSTGRES_PASSWORD=bonton
+        - POSTGRES_DATABASE=db_post
+      build: ./example-backend
+      expose:
+        - 8080
+      ports: 
+        - 8080:8080
+      networks: 
+        - redis-network
+        - db-network
+      depends_on:
+        - db
+     
+  redis:
+      image: redis
+      networks: 
+        - redis-network
+      volumes:
+        - ./redis_cache:/data
+
+  db:
+      image: postgres:13.2-alpine
+      restart: unless-stopped
+      environment:
+        POSTGRES_USER: bron
+        POSTGRES_PASSWORD: bonton
+        POSTGRES_DB: db_post
+      volumes:
+        - ./database:/var/lib/postgresql/data
+      container_name: db_postgres
+      networks:
+        - db-network
+
+networks:
+    redis-network:
+      name: redis-network
+    db-network:
+      name: db-network

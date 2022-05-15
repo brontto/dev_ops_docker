@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+    frontend:
+      build: ./ml-kurkkumopo-frontend
+      ports:
+        - 3000:3000
+      networks:
+        - frontback-network
+      container_name: ai-frontend
+    
+    backend:
+      build: ./ml-kurkkumopo-backend
+      volumes:
+        - model:/src/model
+      networks:
+        - frontback-network
+      container_name: ai-backend
+      depends_on: 
+        - ai-training
+    
+    training:
+      build: ./ml-kurkkumopo-training
+      volumes:
+        - model:/src/model
+        - data:/src/data
+        - img:/src/imgs
+      container_name: ai-training
+
+volumes:
+  model:
+  data:
+  img:
+
+networks:
+  frontback-network:
+    name: frontback-network
