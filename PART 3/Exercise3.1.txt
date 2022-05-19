@@ -1,0 +1,8 @@
+Repo:
+https://github.com/brontto/docker-hy.github.io
+
+Appi herokussa:
+https://docker-appinen.herokuapp.com/
+
+Conffi:
+https://github.com/brontto/docker-hy.github.io/blob/master/.github/workflows/deploy-to-heroku.yml
