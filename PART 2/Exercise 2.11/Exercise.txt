@@ -1,0 +1,1 @@
+I put database of the ohtu miniprocjt in the container. I used postgres image. And it was easier than a normal database installation. 
