@@ -1,0 +1,1 @@
+I changed the basic images to the alpine version and combined the commands.
