@@ -1,0 +1,30 @@
+FROM node:14-alpine as build-stage
+
+WORKDIR /usr/src/app
+
+COPY . . 
+
+ENV REACT_APP_BACKEND_URL=http://localhost/api
+
+RUN npm install && \ 
+    npm run build 
+    
+
+FROM node:14-alpine
+
+COPY --from=build-stage /usr/src/app/build /usr/src/app/build
+
+WORKDIR /usr/src/app
+
+RUN npm install -g serve && \
+    addgroup -S appgroup && \
+    adduser -S appuser -G appgroup
+    
+
+USER appuser
+
+CMD ["serve", "-s", "-l", "5000", "build"]
+
+
+
+

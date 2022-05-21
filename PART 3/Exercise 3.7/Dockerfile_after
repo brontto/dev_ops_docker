@@ -1,0 +1,23 @@
+FROM node:12.16.2 as build-stage
+
+WORKDIR /usr/src/app
+
+COPY . .
+
+RUN npm ci && \
+    npm run build
+
+FROM node:12.16.2-alpine
+
+COPY --from=build-stage /usr/src/app/build /usr/src/app/build
+
+RUN npm install -g serve && \
+    addgroup -S appgroup && \
+    adduser -S appuser -G appgroup
+
+
+EXPOSE 3000
+
+USER appuser
+
+CMD ["serve", "-s", "-l", "3000", "build"]
